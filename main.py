@@ -11,6 +11,7 @@ import requests as rq
 import csv
 from bs4 import BeautifulSoup as bs
 from pprint import pprint
+import time
 
 
 #simple get request
@@ -220,6 +221,8 @@ def scrape_all(links):
 #if ALL is set to True, all districts will be scraped
 def main(ALL=False):
 
+    start_time = time.time()
+
     #all valid links (1st input arguments)
     #obtained using the get_all_valid_links() function
     district_links = {
@@ -305,6 +308,8 @@ def main(ALL=False):
     if ALL:
         print("Scraping ALL available districts. This will a few minutes.")
         scrape_all(district_links)
+        end_time = time.time()
+        print(f"Total runtime: {end_time - start_time:.4f} seconds.")
         return
 
     #pprint(get_district_data("https://www.volby.cz/pls/ps2017nss/ps32?xjazyk=CZ&xkraj=2&xnumnuts=2101"))
@@ -317,6 +322,9 @@ def main(ALL=False):
 
     district_data = scrape_district(url)
     csv_dumper(district_data, output_file_name)
+    
+    end_time = time.time()
+    print(f"Total runtime: {end_time - start_time:.4f} seconds.")
 
 
 if __name__ == "__main__":
