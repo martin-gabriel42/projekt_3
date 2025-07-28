@@ -156,7 +156,7 @@ def get_municipality_data(url):
             party_vote_data.append((all_cells[1].get_text().replace("\xa0", ""), all_cells[2].get_text().replace("\xa0", "")))
 
     voter_data["votes by party"] = party_vote_data
-    #pprint(voter_data)
+    #print(voter_data)
 
     return voter_data
 
