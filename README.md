@@ -17,8 +17,8 @@ Pro každý okres je vytvořen jeden soubor. Tento výsledný soubor obsahuje pr
 
 ## požadavky na spuštění skriptu
 
-Python 3.6+
-Potřebné knihovny třetích stran jsou uvedené v souboru requirements.txt
+Python 3.6+  
+Potřebné knihovny třetích stran jsou uvedené v souboru requirements.txt  
 Knihovny lze instalovat následujícím způsobem:
 
     pip install -r requirements.txt
@@ -33,15 +33,15 @@ Pro stáhnutí dat jednoho okresu:
 
 Skript se spouští dvěma argumenty. Prvním argumentem je odkaz na daný okres. Druhým argumentem je jméno výstupního souboru.  
 
--vstupní parametry  
+-vstupní parametry:  
 
     `<URL> <jméno_souboru>`
     
-Skript stáhne výsledky pro konkrétní okres  
+Skript stáhne výsledky pro konkrétní okres.  
 
 Příklad:
     
-    python main.py "https://www.volby.cz/pls/ps2017nss/ps32?xjazyk=CZ&xkraj=2&xnumnuts=2101" výsledky
+    python main.py "https://www.volby.cz/pls/ps2017nss/ps32?xjazyk=CZ&xkraj=2&xnumnuts=2101" výsledky  
 
 -Skript vygeneruje soubor výsledky.csv, který bude obsahovat volební data z daného odkazu (v tomto případě okres Benešov).  
 -Jméno výstupního souboru může nebo nemusí obsahovat příponu .csv, skript akceptuje obě možnosti.  
@@ -54,7 +54,7 @@ Pro stáhnutí dat všech okresů:
 
 Skript se spouští jedním argumentem.
 
--vstupní parametr  
+-vstupní parametr:  
 
 `ALL`
 
