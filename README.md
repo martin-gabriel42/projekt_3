@@ -8,12 +8,12 @@ https://www.volby.cz/pls/ps2017nss/ps3?xjazyk=CZ
 Skript stáhne volební data daného volebního okresu (případně všech okresů) a vytvoří csv soubor s výsledky.
 Pro každý okres je vytvořen jeden soubor. Tento výsledný soubor obsahuje pro každou obec v okresu následující informace:
 
--kód obce (code)
--název obce (municipality)
--počet voličů v seznamu (registered voters)
--celkový počet hlasů (total votes)
--počet platných hlasů (valid votes)
--všechny strany, které v okresu kandidovaly a odpovídající počet hlasů pro tuto stranu
+-kód obce (code)  
+-název obce (municipality)  
+-počet voličů v seznamu (registered voters)  
+-celkový počet hlasů (total votes)  
+-počet platných hlasů (valid votes)  
+-všechny strany, které v okresu kandidovaly a odpovídající počet hlasů pro tuto stranu  
 
 ## požadavky na spuštění skriptu
 
@@ -31,34 +31,42 @@ Skript dokáže stáhnout data buď jednoho konkrétního okresu, nebo všech ok
 
 Pro stáhnutí dat jednoho okresu:
 
-    Skript se spouští dvěma argumenty. Prvním argumentem je odkaz na daný okres. Druhým argumentem je jméno výstupního souboru.
+Skript se spouští dvěma argumenty. Prvním argumentem je odkaz na daný okres. Druhým argumentem je jméno výstupního souboru.  
 
-    -vstupní parametry `<URL> <jméno_souboru>`: Skript stáhne výsledky pro konkrétní okres
+-vstupní parametry  
 
-    Příklad:
+    `<URL> <jméno_souboru>`
     
-        python main.py "https://www.volby.cz/pls/ps2017nss/ps32?xjazyk=CZ&xkraj=2&xnumnuts=2101" výsledky
+Skript stáhne výsledky pro konkrétní okres  
 
-        -Skript vygeneruje soubor výsledky.csv, který bude obsahovat volební data z daného odkazu (v tomto případě okres Benešov).
-        -Jméno výstupního souboru může nebo nemusí obsahovat příponu .csv, skript akceptuje obě možnosti.
-        -Pokud je odkaz nebo jméno výstupního souboru neplatné, skript vypíše varování a ukončí se.
+Příklad:
+    
+    python main.py "https://www.volby.cz/pls/ps2017nss/ps32?xjazyk=CZ&xkraj=2&xnumnuts=2101" výsledky
 
-    !!! POZOR !!!
-        Skript automaticky přepíše existující soubory se shodným jménem výstupního souboru.
+-Skript vygeneruje soubor výsledky.csv, který bude obsahovat volební data z daného odkazu (v tomto případě okres Benešov).  
+-Jméno výstupního souboru může nebo nemusí obsahovat příponu .csv, skript akceptuje obě možnosti.  
+-Pokud je odkaz nebo jméno výstupního souboru neplatné, skript vypíše varování a ukončí se.  
+
+!!! POZOR !!!  
+Skript automaticky přepíše existující soubory se shodným jménem výstupního souboru.
 
 Pro stáhnutí dat všech okresů:
 
-    Skript se spouští jedním argumentem.
+Skript se spouští jedním argumentem.
 
-    -vstupní parametr `ALL`: Skript stáhne výsledky pro všechny okresy. Jakýkoliv jiný parametr je neplatný.
+-vstupní parametr  
 
-    Příklad:
+`ALL`
 
-        python main.py ALL
+Skript stáhne výsledky pro všechny okresy. Jakýkoliv jiný parametr je neplatný.  
 
-        -Skript vygeneruje pro každý okres samostatný soubor do právě používané složky (cwd).
-        -Jména výstupních souborů mají formát {jméno okresu}_results.csv
+Příklad:  
+
+    python main.py ALL
+
+-Skript vygeneruje pro každý okres samostatný soubor do právě používané složky (cwd).  
+-Jména výstupních souborů mají formát {jméno okresu}_results.csv  
         
-    !!! POZOR !!!
-        Skript automaticky přepíše existující soubory se shodným jménem výstupních souborů.
-        Tato možnost spouštění obvykle bude trvat několik minut, než se stáhnou data ze všech okresů.
+!!! POZOR !!!  
+Skript automaticky přepíše existující soubory se shodným jménem výstupních souborů.  
+Tato možnost spouštění obvykle bude trvat několik minut, než se stáhnou data ze všech okresů.  
