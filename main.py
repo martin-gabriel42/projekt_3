@@ -92,7 +92,8 @@ def input_validation():
     if len(sys.argv) != 3:
         if len(sys.argv) == 2 and sys.argv[1] == "ALL":
             return "ALL"
-        print("This script need 2 arguments to run to scrape a district.", end="\n")
+        print("""This script need 2 arguments to run to scrape a district.
+Alternatively, use a single argument 'ALL' to scrape all districts at once.""", end="\n")
         return False
 
     url = sys.argv[1]
