@@ -5,9 +5,12 @@ author: Martin Gabriel
 email: gabmar@post.cz
 """
 
+#builtins
 import sys
 import csv
 import time
+
+#third party
 import validators
 import requests as rq
 from bs4 import BeautifulSoup as bs
@@ -75,7 +78,6 @@ def get_all_district_links():
     
     all_links_dict.pop("Zahraničí")
 
-    #pprint(all_links_dict)
     return all_links_dict
 
 
@@ -177,8 +179,6 @@ def get_district_data(url):
     district_data = []
     
     for row in all_rows:
-        #print(row, end="\n\n")
-        #print(type(row))
 
         district_info = {
             "link" : "https://www.volby.cz/pls/ps2017nss/" + row.find("a")["href"],
@@ -209,7 +209,6 @@ def scrape_district(url):
             error_links.append((district["municipality"], district["link"]))
             continue
 
-        #print("scraped municipality: ", district["municipality"])
         for key, value in municipality_data.items():
             district[key] = value
     
